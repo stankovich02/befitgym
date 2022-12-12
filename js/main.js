@@ -11,7 +11,7 @@ for(let indeks in links)
     }
     else
     {
-        navMenu.innerHTML += `<a href="${links[indeks]}">${sections[indeks]}</a>`
+        navMenu.innerHTML += `<a href="/befitgym/${links[indeks]}">${sections[indeks]}</a>`
     }
 }
 let boxCont = document.querySelector('#about-cont');
