@@ -705,11 +705,14 @@ display: flex;
     margin-bottom: 50px;
   }
 form{
+  //border: 2px solid $red;
   width: 30%;
   margin: 50px auto;
   display: flex;
   flex-direction: column;
   margin-bottom: 150px;
+  padding: 50px;
+
   .incomplete{
     border-bottom: 2px solid red;
   }
@@ -857,6 +860,13 @@ form{
     }
   }
 }
+@media (max-width:1101px){
+  #ordering{
+    form{
+    width: 70%;
+  }
+}
+}
 @media (max-width:991px){
 
   html{
@@ -991,6 +1001,11 @@ form{
       }
       }
     }
+    #ordering{
+    form{
+      width: 90%;
+    }
+  }
   
 }
 

@@ -155,6 +155,15 @@ var expMonthRegex = /^[0-9]{2}$/;
 var expYearRegex = /^[0-9]{2}$/;
 var cvvRegex = /^[0-9]{3}$/;   
 var messages = document.querySelectorAll('#orderingForm span');
+var fullNameCheck = false;
+var mailCheck = false;
+var cardNumberCheck = false;
+var expMonthCheck = false;
+var expYearCheck = false;
+var CvvCheck = false;
+var cardHolderCheck = false;
+var selectPlansCheck = false;
+
 function validateFullName(){
     if(fullName.value.match(fullnameRegex)){
         fullName.classList.remove('incomplete');
@@ -237,7 +246,7 @@ function validateCvv(){
         cvv.classList.remove('incomplete');
         cvv.classList.add('complete');
         messages[6].innerHTML = "";
-        return true;
+       return true;
     }
     else if (cvv.value.length == 0){
         cvv.classList.remove('complete');
@@ -257,7 +266,7 @@ function validateCardHolder(){
         cardHolder.classList.remove('incomplete');
         cardHolder.classList.add('complete');
         messages[7].innerHTML = "";
-        return true;
+       return true;
     }
     else if(cardHolder.value.length == 0){
         cardHolder.classList.add('incomplete');
@@ -328,7 +337,10 @@ function validateExpYear(){
 fullName.addEventListener('focus', () => {
     fullName.classList.add('incomplete');
     });
-fullName.addEventListener('blur', validateFullName);
+fullName.addEventListener('blur',function(){
+    validateFullName();
+    formborder();
+});
 fullName.addEventListener('keydown', (e) => {
     if(e.key == 'Backspace' || e.key == 'Delete'){
         fullName.classList.remove('complete');
@@ -339,7 +351,10 @@ fullName.addEventListener('keydown', (e) => {
 mail.addEventListener('focus', () => {
     mail.classList.add('incomplete');
     });
-mail.addEventListener('blur', validateMail);
+mail.addEventListener('blur', function(){
+    validateMail();
+    formborder();
+});
 mail.addEventListener('keydown', (e) => {
     if(e.key == 'Backspace' || e.key == 'Delete'){
         mail.classList.remove('complete');
@@ -347,11 +362,17 @@ mail.addEventListener('keydown', (e) => {
     }
 
 });
-Selectplans.addEventListener('blur', validateSelectPlans);
+Selectplans.addEventListener('blur', function(){
+    validateSelectPlans();
+    formborder();
+});
 cardNumber.addEventListener('focus', () => {
     cardNumber.classList.add('incomplete');
     });
-cardNumber.addEventListener('blur', validateCardNumber);
+cardNumber.addEventListener('blur', function(){
+    validateCardNumber();
+    formborder();
+});
 cardNumber.addEventListener('keydown', (e) => {
     if(e.key == 'Backspace' || e.key == 'Delete'){
         cardNumber.classList.remove('complete');
@@ -371,11 +392,17 @@ cardNumber.addEventListener('keydown', (e) => {
 expMonth.addEventListener('focus', () => {
     expMonth.classList.add('incomplete');
     });
-expMonth.addEventListener('blur', validateExpMonth);
+expMonth.addEventListener('blur', function(){
+    validateExpMonth();
+    formborder();
+});
 expYear.addEventListener('focus', () => {
     expYear.classList.add('incomplete');
     });
-expYear.addEventListener('blur', validateExpYear);
+expYear.addEventListener('blur', function(){
+    validateExpYear();
+    formborder();
+});
 cvv.addEventListener('focus', () => {
     cvv.classList.add('incomplete');
     });
@@ -383,7 +410,10 @@ cvv.addEventListener('blur', validateCvv);
 cardHolder.addEventListener('focus', () => {
     cardHolder.classList.add('incomplete');
     });
-cardHolder.addEventListener('blur', validateCardHolder);
+cardHolder.addEventListener('blur', function(){
+    validateCardHolder();
+    formborder();
+});
 cardHolder.addEventListener('keydown', (e) => {
     if(e.key == 'Backspace' || e.key == 'Delete')
     {
@@ -407,6 +437,16 @@ form.addEventListener('submit', (e) => {
         setTimeout("location.reload(true);", 0);
     }
 });
+function formborder(){
+    if(validateFullName() && validateMail() && validateSelectPlans() && validateCardNumber() && validateExpMonth() && validateExpYear() && validateCvv() && validateCardHolder())
+    {
+        document.querySelector('form').style.border = '4px solid green';
+    }
+    else
+    {
+        document.querySelector('form').style.border = '4px solid red';
+    }
+}
 
 
 
