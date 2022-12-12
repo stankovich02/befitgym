@@ -7,7 +7,7 @@ for(let indeks in links)
 {
     if(indeks == links.length)
     {
-        navMenu.innerHTML += `<a href="#${links[indeks]}">${sections[indeks]}</a>`
+        navMenu.innerHTML += `<a href="/befitgym/${links[indeks]}">${sections[indeks]}</a>`
     }
     else
     {
