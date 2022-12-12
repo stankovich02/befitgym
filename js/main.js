@@ -1,7 +1,7 @@
 
 let navMenu = document.querySelector('.navbar');
 navMenu.innerHTML="";
-let links = ['home','about','features','pricing','trainers', 'review', 'https://stankovich02.github.io/portfolio/'];
+let links = ['home','about','features','pricing','trainers', 'review', 'author'];
 let sections = ['home','about','features','pricing','trainers', 'review', 'author']
 for(let indeks in links){
     navMenu.innerHTML += `<a href="/befitgym/#${links[indeks]}">${sections[indeks]}</a>`;
