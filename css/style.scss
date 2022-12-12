@@ -263,18 +263,20 @@ p{
 }
 
 .features .box-container{
-  @include grid(32rem);
-  gap:0;
+  // @include grid(32rem);
+  // gap:0;
+  display: flex;
   .box{
     background: $light-bg;
+    width: 33.33%;
     &:nth-child(2){
       display: flex;
       flex-flow: column-reverse;
     }
 
-    &:hover .image img{
-      transform: scale(1.1);
-    }
+    // &:hover .image img{
+    //   transform: scale(1.1);
+    // }
 
     .image{
       height: 30rem;
@@ -318,10 +320,10 @@ p{
 }
 
 .pricing{
-  @include grid(32rem);
-
+  // @include grid(32rem);
+  display: flex;
   .information{
-
+width: 33.33%;
     span{
       font-size: 2rem;
       color:$red;
@@ -349,7 +351,7 @@ p{
   .plan{
     text-align: center;
     padding:2rem;
-
+    width: 33.33%;
     &:nth-child(2){
       background:linear-gradient(130deg,  $light-bg 93%, transparent 90%);
     }
@@ -390,16 +392,17 @@ p{
 }
 
 .trainers .box-container{
-  @include grid(29rem);
-
+  // @include grid(29rem);
+display: flex;
   .box{
     height: 40rem;
     overflow: hidden;
     position: relative;
-
-    &:hover .content{
-      transform: translateY(0);
-    }
+    width: 33%;
+    margin: 0 5px;
+    // &:hover .content{
+    //   transform: translateY(0);
+    // }
 
     img{
       height: 100%;
@@ -412,7 +415,7 @@ p{
       bottom: 0; left:0; right:0;
       background: $light-bg;
       padding:2rem;
-      transform: translateY(6.5rem);
+      //transform: translateY(6.5rem);
 
       span{
         font-size: 1.5rem;
@@ -693,11 +696,20 @@ p{
   }
 }
 #ordering{
+  h1{
+    font-size: 4rem;
+    color:$white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
 form{
   width: 30%;
-  margin: 0px auto;
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
+  margin-bottom: 150px;
   .incomplete{
     border-bottom: 2px solid red;
   }
@@ -706,7 +718,7 @@ form{
   }
   span{
     color: red;
-    font-size: 15px;
+    font-size: 18px;
     text-transform: none;
     text-align: center;
   }
@@ -714,7 +726,7 @@ form{
       width: 100%;
       color: white;
       padding: 10px;
-      font-size: 15px;
+      font-size: 18px;
       margin: 10px 0px;
       border-bottom: 2px solid white;
       border-radius: 1px;
@@ -757,20 +769,25 @@ form{
       }
       #expdate{
         display: flex;
-        align-items: center;
-        justify-content: space-evenly;
         width: 100%;
+        #monthyear{
+          display: flex;
+          align-items: center;
+          width: 100%;
+        }
         input{
-          width: 15%;
+          width: 20%;
+         
         }
         p{
           color: white;
           font-size: 20px;
+          margin: 0px 5px;
       }
       span{
         color: white;
-        font-size: 15px;
-        margin-right: 5px;
+        font-size: 18px;
+        margin-right: 10px;
       }
       #cvv{
         width: 20%;
@@ -788,6 +805,7 @@ form{
   border: 1px solid #ccc;
   border-radius: 5px;
   text-transform: none;
+  font-size: 18px;
 }
 }
 }
@@ -803,7 +821,42 @@ form{
 
 
 // media queries 
+@media (max-width:1501px){
+  #ordering{
+    form{
+    width: 50%;
+  }
+}
+}
+@media (max-width:1501px){
+  .pricing{
+    flex-direction: column;
+    align-items: center;
+    .information{
+      width: 50%;
+      text-align: center;
+    }
+    .plan{
+      width: 50%;
+      margin-top: 50px;
+    }
+  }
+  .trainers{
+    .box-container{
+      // flex-direction: column;
+      // align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      .box{
+        height: auto;
+        margin-top: 50px;
+        width: 35%;
+        margin: 20px 20px;
 
+      }
+    }
+  }
+}
 @media (max-width:991px){
 
   html{
@@ -830,6 +883,40 @@ form{
       }
     }
   }
+  .features .box-container{
+    flex-direction: column;
+    align-items: center;
+    .box{
+      width: 60vw;
+      margin-bottom: 50px;
+      &:nth-child(2){
+        flex-flow: column;
+      }
+    }
+  }
+  #ordering{
+    form{
+    input{
+      font-size: 16px;
+    }
+    #selectplans{
+      font-size: 16px;
+    }
+    span{
+      font-size: 16px;
+    }
+    #card{
+      #expdate{
+        p{
+          font-size: 16px;
+        }
+        span{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
 
 }
 
@@ -837,10 +924,6 @@ form{
 
   #menu-btn{
     display: inline-block;
-
-    &.fa-times{
-      transform: rotate(180deg);
-    }
   }  
 
   .header{
@@ -878,8 +961,24 @@ form{
   .features .box-container{
     flex-flow: column;
   }
+  .trainers{
+    .box-container{
+      flex-direction: column;
+      align-items: center;
+      .box{
+        height: auto;
+        margin-top: 50px;
+        width: 60%;
+        margin: 20px 20px;
 
-  
+      }
+    }
+  }
+#ordering{
+    form{
+      width: 80%;
+    }
+  }
 
 }
 @media(max-width: 606px){

@@ -14,7 +14,7 @@
     <!-- custom css file link  -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="icon" href="images/favicon.ico"/>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
     
@@ -42,15 +42,7 @@
 
         <div class="swiper-wrapper">
 
-            <div class="swiper-slide slide" style="background: url(images/home-bg-1.jpg) no-repeat;">
-                <div class="content">
-                    <span>be strong, be fit</span>
-                    <h3>Make yourself stronger than your excuses.</h3>
-                    <a href="#pricing" class="btn">get started</a>
-                </div>
-            </div>
-
-            <div class="swiper-slide slide" style="background: url(images/home-bg-2.jpg) no-repeat;">
+            <div class="swiper-slide slide" >
                 <div class="content">
                     <span>be strong, be fit</span>
                     <h3>Make yourself stronger than your excuses.</h3>
@@ -59,7 +51,7 @@
             </div>
 
            
-
+            <!--style="background: url(images/home-bg-1.jpg) no-repeat--> 
         </div>
 
         <div class="swiper-pagination"></div>
@@ -99,7 +91,7 @@
 
     <div class="box-container">
 
-       
+        
 
     </div>
 
@@ -162,7 +154,7 @@
     <h1 class="heading"> <span>expert trainers</span> </h1>
 
     <div class="box-container">
-
+        
     </div>
 
 </section>
@@ -224,19 +216,16 @@
                     <div class="link"> <a href="#">by admin</a> <span>|</span> <a href="#">21st may, 2021</a> </div>
                     <h3>fitness is not about being better than someone else</h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, tenetur?</p>
-                    <!--<a href="#" class="btn">read more</a>-->
                 </div>
             </div>
-            
             <div class="swiper-slide slide">
                 <div class="image">
                     <img src="images/blog-2.jpg" alt="">
                 </div>
                 <div class="content">
                     <div class="link"> <a href="#">by admin</a> <span>|</span> <a href="#">2nd june, 2021</a> </div>
-                    <h3>fitness is not about being better than someone else</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, ad<!--<a href="#" class="btn">read more</a>-->ipisicing elit. Aliquam, tenetur?</p>
-                    <!--<a href="#" class="btn">read more</a>-->
+                    <h3>How much training actually helps in improving your mindset?</h3>
+                    <p>The general rule is that training can improve the way of thinking, but is it really so? Well we can...</p>
                 </div>
             </div>
 
@@ -246,9 +235,8 @@
                 </div>
                 <div class="content">
                     <div class="link"> <a href="#">by admin</a> <span>|</span> <a href="#">15th august, 2021</a> </div>
-                    <h3>fitness is not about being better than someone else</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, tenetur?</p>
-                   <!--<a href="#" class="btn">read more</a>-->
+                    <h3>Most popular question: "Best exercises for bigger biceps?"</h3>
+                    <p>There are a lot of exercises if you want to have bigger biceps , so in this post we'll describe some of the most...</p>
                 </div>
             </div>
 
@@ -258,9 +246,8 @@
                 </div>
                 <div class="content">
                     <div class="link"> <a href="#">by admin</a> <span>|</span> <a href="#">25th november, 2021</a> </div>
-                    <h3>fitness is not about being better than someone else</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, tenetur?</p>
-                    <!--<a href="#" class="btn">read more</a>-->
+                    <h3>Is it imoprtant to have your personal coach during the trainings or you can train on your own?</h3>
+                    <p>Is it important to have your personal coach during the training or you can train on your own?</p>
                 </div>
             </div>
 
@@ -272,7 +259,6 @@
                     <div class="link"> <a href="#">by admin</a> <span>|</span> <a href="#">21st may, 2021</a> </div>
                     <h3>fitness is not about being better than someone else</h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, tenetur?</p>
-                    <!--<a href="#" class="btn">read more</a>-->
                 </div>
             </div>
 
@@ -293,6 +279,7 @@
 <!-- footer section starts  -->
 
 <section id="ordering">
+    <h1>Order your training plan today!</h1>
     <form name="orderingForm" id="orderingForm" action="" method="">
             <input type="text" id="fullname"  name="Full name" placeholder="Full name" autocomplete="off"/>
             <span></span>
@@ -311,10 +298,12 @@
                 </div>
                 <span></span>
             <div id="expdate">
+                <div id="monthyear">
                 <span>Expiry date:</span>
                <input type="text" id="expdatemonth" name="expdatemonth" placeholder="MM">
                 <p>/</p>
                 <input type="text" id="expdateyear" name="expdateyear" placeholder="YY">
+                </div>
                 <input type="text" name="cvv"  autocomplete="off" placeholder="CVV" id="cvv"/>
             </div>          
                 <span></span>
@@ -346,10 +335,10 @@
 
         <div class="box">
             <h3>contact</h3>
-            <p> <i class="fas fa-phone"></i> +123-456-7890 </p>
-            <p> <i class="fas fa-phone"></i> +111-222-3333 </p>
-            <p> <i class="fas fa-envelope"></i> shaikhanas@gmail.com </p>
-            <p> <i class="fas fa-map"></i> mumbai, india - 400104 </p>
+            <p> <i class="fas fa-phone"></i> 011-456-7890 </p>
+            <p> <i class="fas fa-phone"></i> 011-222-3333 </p>
+            <p> <i class="fas fa-envelope"></i> befit@gmail.com </p>
+            <p> <i class="fas fa-map"></i> Belgrade, Serbia - 11800 </p>
             <div class="share">
                 <a href="#" class="fab fa-facebook-f"></a>
                 <a href="#" class="fab fa-twitter"></a>
@@ -371,7 +360,7 @@
 
 </section>
 
-<div class="credit"> created by <span>mr. web designer</span> | all rights reserved! </div>
+<div class="credit"> created by <span>Marko Stankovic 41/21</span> | all rights reserved! </div>
 
 <!-- footer section ends -->
 
@@ -392,6 +381,7 @@
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
 <script src="js/main.js"></script>
+
 
 </body>
 </html>

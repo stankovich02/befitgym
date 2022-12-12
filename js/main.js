@@ -1,11 +1,32 @@
-
 let navMenu = document.querySelector('.navbar');
 navMenu.innerHTML="";
 let links = ['home','about','features','pricing','trainers', 'review', 'author'];
 let sections = ['home','about','features','pricing','trainers', 'review', 'author']
+const menubtn = document.querySelector('#menu-btn');
+const navbar = document.querySelector('.header .navbar');
+menubtn.addEventListener('click', () =>{
+    menubtn.classList.toggle('fa-times');
+    navbar.classList.toggle('active');
+});
+
+window.onscroll = () =>{
+    menubtn.classList.remove('fa-times');
+    navbar.classList.remove('active');
+};
 for(let indeks in links){
     navMenu.innerHTML += `<a href="/befitgym/#${links[indeks]}">${sections[indeks]}</a>`;
 } 
+var indeksImg = 0;
+var images = ['home-bg-1.jpg','home-bg-2.jpg','home-bg-3.jpg'];
+function changeImg(){
+    document.querySelector('.slide').style.backgroundImage = `url(images/${images[indeksImg]})`;
+    indeksImg++;
+    if(indeksImg >= images.length){
+        indeksImg = 0;
+    }
+    setTimeout("changeImg()", 5000);
+};
+window.onload = changeImg;
 let boxCont = document.querySelector('#about-cont');
 boxCont.innerHTML="";
 let aboutMotives = ['body and mind', 'healthy life', 'strategies', 'workout'];
@@ -37,6 +58,12 @@ for(let indeks in singleFeature)
                             </div>
                            </div>`
 }
+$('#features img').mouseover(function(){
+    $(this).css({"transform":"scale(1.1)"})
+});
+$('#features img').mouseout(function(){
+    $(this).css({"transform":"scale(1)"})
+});
 let trainerBox = document.querySelector('#trainers .box-container');
 trainerBox.innerHTML = "";
 let trainerImages = ['trainer-1.jpg','trainer-2.jpg','trainer-3.jpg','trainer-4.jpg'];
@@ -56,6 +83,15 @@ for(let indeks in trainerImages){
                                 </div>
                             </div>`
 }
+$('#trainers .content').css('transform','translateY(6.5rem)');
+$('#trainers .content').mouseover(function(){
+    $(this).css({"transform":"translateY(0px)"})
+});
+$('#trainers .content').mouseout(function(){
+    $(this).css({"transform":"translateY(6.5rem)"})
+});
+
+
 let testimonialSlider = document.querySelector("#review .swiper-wrapper");
 testimonialSlider.innerHTML="";
 let clientsNames = ['Elmer Dunn','Melisa Nash','Hayden Brandt','Barbara Hilton'];
@@ -87,8 +123,8 @@ for(let indeks in links){
 var expDateDay = document.querySelector('#expdatemonth');
 var expDateYear = document.querySelector('#expdateyear');
 var datum = new Date();
-var dateyear = datum.getFullYear();
-var shortyear = dateyear % 2000;
+var dateYear = datum.getFullYear();
+var shortYear = dateYear % 2000;
 for(let i=1; i<=12; i++){
     if(i<10)
     {
@@ -99,7 +135,7 @@ for(let i=1; i<=12; i++){
     } 
 }
 
-for(let i=shortyear; i<=shortyear + 10; i++){
+for(let i=shortYear; i<=shortYear + 10; i++){
     expDateYear.innerHTML += `<option value="${i}">${i}</option>`
 }
 const form = document.querySelector('#orderingForm');
@@ -114,7 +150,7 @@ const cardHolder = document.querySelector('#cardholder');
 const submit = document.querySelector('#submit');
 var fullnameRegex = /^[A-ZČĆŽĐŠ][a-zćčžđš]{1,14}\s([A-ZČĆŽĐŠ][a-zćčžđš]{1,14})?\s?[A-ZČĆŽŠĐ][a-zćčžđš]{1,19}(\s([A-ZČĆŽĐŠ][a-zćčžđš]{1,14}))?$/;
 var mailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-var cardNumberRegex = /^[0-9]{16}$/;
+var cardNumberRegex = /^[45][0-9]{15}$/;
 var expMonthRegex = /^[0-9]{2}$/;
 var expYearRegex = /^[0-9]{2}$/;
 var cvvRegex = /^[0-9]{3}$/;   
@@ -192,7 +228,7 @@ function validateCardNumber(){
     else{
         cardNumber.classList.add('incomplete');
         cardNumber.classList.remove('complete');
-        messages[3].innerHTML = "Please enter your card number in correct format! <br>Example: 1234 5678 9012 3456";
+        messages[3].innerHTML = "Please enter your card number in correct format! <br>Example: 4234 5678 9012 3456, and it must start with 4 or 5";
         return false;
     }
 }
@@ -236,7 +272,6 @@ function validateCardHolder(){
         return false;
     }
 }
-
 function validateExpMonth(){
    if(expMonth.value.match(expMonthRegex))
    {
@@ -262,7 +297,7 @@ function validateExpMonth(){
 }
 function validateExpYear(){
     
-    if(expYear.value < shortyear && expYear.value > 0)
+    if(expYear.value < shortYear && expYear.value > 0)
    {
     expYear.classList.remove('complete');
     expYear.classList.add('incomplete');
@@ -287,7 +322,7 @@ function validateExpYear(){
    { 
     expYear.classList.remove('complete');
     expYear.classList.add('incomplete');
-    messages[5].innerHTML = `Please enter your expiration year date in correct format! <br>Example: ${shortyear}`};
+    messages[5].innerHTML = `Please enter your expiration year date in correct format! <br>Example: ${shortYear}`};
     return false;
 }
 fullName.addEventListener('focus', () => {
@@ -350,11 +385,11 @@ cardHolder.addEventListener('focus', () => {
     });
 cardHolder.addEventListener('blur', validateCardHolder);
 cardHolder.addEventListener('keydown', (e) => {
-    if(e.key == 'Backspace' || e.key == 'Delete'){
+    if(e.key == 'Backspace' || e.key == 'Delete')
+    {
         cardHolder.classList.remove('complete');
         cardHolder.classList.add('incomplete');
     }
-
 });
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -371,8 +406,6 @@ form.addEventListener('submit', (e) => {
         alert('Success');
         setTimeout("location.reload(true);", 0);
     }
-   
-
 });
 
 
