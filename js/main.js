@@ -503,7 +503,9 @@ cardHolder.addEventListener('keydown', (e) => {
         cardHolder.classList.add('incomplete');
     }
 });
-form.addEventListener('submit', (e) => {
+var modbtn = document.querySelector('#popup-btn')
+var popup = document.querySelector("#popupbg");
+form.addEventListener('submit', function(e) {
     e.preventDefault();
     validateFullName();
     validateMail();
@@ -515,8 +517,11 @@ form.addEventListener('submit', (e) => {
     validateCardHolder();
     if(validateFullName() && validateMail() && validateSelectPlans() && validateCardNumber() && validateExpMonth() && validateExpYear() && validateCvv() && validateCardHolder())
     {
-        alert('Success');
+        popup.style.display = "block";
+        modbtn.onclick = function () {
+        popup.style.display = "none";
         setTimeout("location.reload(true);", 0);
+        }
     }
 });
 function formborder(){
@@ -529,7 +534,5 @@ function formborder(){
         document.querySelector('form').style.border = '3px solid red';
     }
 }
-
-
         
     
