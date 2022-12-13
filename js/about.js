@@ -16,8 +16,10 @@ window.onscroll = () =>{
 for(let indeks in links){
     navMenu.innerHTML += `<a href="/befitgym/${links[indeks]}">${sections[indeks]}</a>`;
 } 
+let footerLinks = ['#home','#about','#features','#pricing','#trainers', '#review', 'documentation.pdf','sitemap.xml','rss.xml'];
+let footerSections = ['home','about','features','pricing','trainers', 'review', 'documentation','sitemap','rss']
 let footerBox = document.querySelector('.footer .box');
 footerBox.innerHTML= '<h3>quick links</h3>'; 
-for(let indeks in links){
-    footerBox.innerHTML += `<a class="links" href="${links[indeks]}">${sections[indeks]}</a>`;
+for(let indeks in footerLinks){
+    footerBox.innerHTML += `<a class="links" href="${footerLinks[indeks]}">${footerSections[indeks]}</a>`;
 } 

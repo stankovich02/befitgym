@@ -198,10 +198,12 @@ const blogsSwiper = new Swiper(".blogs-slider", {
         },
     },
 });
+let footerLinks = ['#home','#about','#features','#pricing','#trainers', '#review', 'documentation.pdf','sitemap.xml','rss.xml'];
+let footerSections = ['home','about','features','pricing','trainers', 'review', 'documentation','sitemap','rss']
 let footerBox = document.querySelector('.footer .box');
 footerBox.innerHTML= '<h3>quick links</h3>'; 
-for(let indeks in links){
-    footerBox.innerHTML += `<a class="links" href="${links[indeks]}">${sections[indeks]}</a>`;
+for(let indeks in footerLinks){
+    footerBox.innerHTML += `<a class="links" href="${footerLinks[indeks]}">${footerSections[indeks]}</a>`;
 } 
 var expDateDay = document.querySelector('#expdatemonth');
 var expDateYear = document.querySelector('#expdateyear');
