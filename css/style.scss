@@ -826,8 +826,8 @@ form{
     color: #333;
   }
   img{
-    width: 100px;
-    margin-top: -70px;
+    width: 20%;
+    margin-top: -50px;
     margin-bottom: 30px;
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -849,44 +849,6 @@ form{
   }
   }
 }
-.open-popup{
-  // visibility: visible;
-  transform: translate(-50%, -50%) scale(1);
-  transition: all 0.3s ease-in-out;
-  top: 50%;
-}
-// .modal {
-//   width: 100%;
-//   z-index: 999999;
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   height: 100%;
-//   background: $light-bg;
-// }
-// .modal-content {
-//   background-color: #fefefe;
-//   margin: 0px auto;
-//   padding: 20px;
-//   text-align: center;
-//   width: 400px;
-// }
-// .modal-content h2{
-//   margin-bottom: 20px;
-//   font-size: 20px;
-// }
-// .modal-content p{
-//   margin-bottom: 20px;
-//   font-size: 18px;
-// }
-// .modal-content #pop{
-//   margin-top: 20px;
-//   margin-bottom: 0px;
-//   width: 50%;
-//   margin: 0px auto;
-// }
 // media queries 
 @media (max-width:1501px){
   #ordering{
@@ -1099,6 +1061,38 @@ form{
      width: 90%;
       }
     }
+    #popupbg{
+    #popup{
+      width:80%;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      padding: 15px;
+      h2{
+        margin-bottom: 15px;
+        font-size: 18px;
+        color: #333;
+      }
+      p{
+        margin-bottom: 15px;
+        font-size: 16px;
+        color: #333;
+      }
+      img{
+        max-width: 20%;
+        margin-top: -50px;
+        margin-bottom: 30px;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    
+      }
+      }
+    }
 }
 @media(max-width: 400px){
   .pricing{
@@ -1210,6 +1204,32 @@ form{
     }
   }
 }
+#popupbg{
+  #popup{
+    width:85%;
+    h2{
+      margin-bottom: 10px;
+      font-size: 17px;
+      color: #333;
+    }
+    p{
+      margin-bottom: 10px;
+      font-size: 15px;
+      color: #333;
+    }
+    img{
+      max-width: 20%;
+      margin-top: -15%;
+      margin-bottom: 30px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  
+    }
+    #popup-btn{
+      width: 50%;
+    }
+    }
+  }
 }
        
 

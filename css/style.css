@@ -729,8 +729,8 @@ p {
   color: #333;
 }
 #popupbg #popup img {
-  width: 100px;
-  margin-top: -70px;
+  width: 20%;
+  margin-top: -50px;
   margin-bottom: 30px;
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -749,12 +749,6 @@ p {
   cursor: -webkit-grab;
   cursor: grab;
   box-shadow: 0 20 20px rgba(0, 0, 0, 0.2);
-}
-
-.open-popup {
-  transform: translate(-50%, -50%) scale(1);
-  transition: all 0.3s ease-in-out;
-  top: 50%;
 }
 
 @media (max-width: 1501px) {
@@ -916,6 +910,35 @@ p {
   .features .box-container .box {
     width: 90%;
   }
+  #popupbg #popup {
+    width: 80%;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 15px;
+  }
+  #popupbg #popup h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+  }
+  #popupbg #popup p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #333;
+  }
+  #popupbg #popup img {
+    max-width: 20%;
+    margin-top: -50px;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
 }
 @media (max-width: 400px) {
   .pricing .information {
@@ -1010,5 +1033,28 @@ p {
   }
   #ordering form #card #expdate #cvv {
     width: 40%;
+  }
+  #popupbg #popup {
+    width: 85%;
+  }
+  #popupbg #popup h2 {
+    margin-bottom: 10px;
+    font-size: 17px;
+    color: #333;
+  }
+  #popupbg #popup p {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #333;
+  }
+  #popupbg #popup img {
+    max-width: 20%;
+    margin-top: -15%;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  #popupbg #popup #popup-btn {
+    width: 50%;
   }
 }/*# sourceMappingURL=style.css.map */
