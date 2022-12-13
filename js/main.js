@@ -1,6 +1,6 @@
 let navMenu = document.querySelector('.navbar');
 navMenu.innerHTML="";
-let links = ['#home','#about','#features','#pricing','#trainers', '#review', '#author.html'];
+let links = ['#home','#about','#features','#pricing','#trainers', '#review', 'author.html'];
 let sections = ['home','about','features','pricing','trainers', 'review', 'author']
 const menubtn = document.querySelector('#menu-btn');
 const navbar = document.querySelector('.header .navbar');
@@ -98,8 +98,6 @@ $('#trainers .content').mouseover(function(){
 $('#trainers .content').mouseout(function(){
     $(this).css({"transform":"translateY(6.5rem)"})
 });
-
-
 let testimonialSlider = document.querySelector("#review .swiper-wrapper");
 testimonialSlider.innerHTML="";
 let clientsNames = ['Elmer Dunn','Melisa Nash','Hayden Brandt','Barbara Hilton'];
@@ -389,7 +387,6 @@ fullName.addEventListener('keydown', (e) => {
         fullName.classList.remove('complete');
         fullName.classList.add('incomplete');
     }
-
 });
 mail.addEventListener('focus', () => {
     mail.classList.add('incomplete');
@@ -490,5 +487,7 @@ function formborder(){
         document.querySelector('form').style.border = '3px solid red';
     }
 }
+
+
         
     

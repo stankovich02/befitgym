@@ -36,6 +36,6 @@ var swiper = new Swiper(".blogs-slider", {
         },
         991:{
             slidesPerView:3,
-        },
+        }
     },
-});s
+});
