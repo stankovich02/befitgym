@@ -691,7 +691,6 @@ form{
   flex-direction: column;
   margin-bottom: 150px;
   padding: 50px;
-  // position: relative;
 
   .incomplete{
     border-bottom: 2px solid red;
@@ -848,6 +847,24 @@ form{
     box-shadow: 0 20 20px rgba(0, 0, 0, 0.2);
   }
   }
+}
+#about-head{
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+    font-size: 3rem;
+    color:$white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 100px;
+    margin-bottom: 50px;
+
+}
+#about-wrapper{
+  width: 80%;
+  height: 500px;
+  margin: 0 auto;
+  background-color: #aaa;
 }
 // media queries 
 @media (max-width:1501px){
