@@ -483,11 +483,11 @@ form.addEventListener('submit', (e) => {
 function formborder(){
     if(validateFullName() && validateMail() && validateSelectPlans() && validateCardNumber() && validateExpMonth() && validateExpYear() && validateCvv() && validateCardHolder())
     {
-        document.querySelector('form').style.border = '4px solid green';
+        document.querySelector('form').style.border = '3px solid green';
     }
     else
     {
-        document.querySelector('form').style.border = '4px solid red';
+        document.querySelector('form').style.border = '3px solid red';
     }
 }
         

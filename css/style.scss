@@ -169,7 +169,7 @@ p{
   height: 2rem;
   width: 2rem;
   background: $white;
-  border-radius: 0;
+  border-radius: 50%;
 
   &.swiper-pagination-bullet-active{
     background: $red;
@@ -323,7 +323,7 @@ width: 33.33%;
     }
 
     h3{
-      font-size: 4rem;
+      font-size: 3rem;
       padding-top: .5rem;
       color:$white;
     }
@@ -331,7 +331,7 @@ width: 33.33%;
     p{
       line-height: 2;
       padding:1rem 0;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       color:$light-white;
 
       i{
@@ -372,7 +372,7 @@ width: 33.33%;
       p{
         line-height: 2;
         padding:1rem 0;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         color:$light-white;
   
         i{
@@ -601,13 +601,13 @@ display: flex;
     .box{
 
       h3{
-        font-size: 2.2rem;
+        font-size: 2.5rem;
         color:$white;
         padding:1rem 0;
       }
 
       .links{
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         display: block;
         color:$light-white;
         padding:1rem 0;
@@ -618,7 +618,7 @@ display: flex;
       }
 
       p{
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         color:$light-white;
         padding:1rem 0;
 
@@ -678,7 +678,7 @@ display: flex;
 }
 #ordering{
   h1{
-    font-size: 4rem;
+    font-size: 3rem;
     color:$white;
     text-align: center;
     padding: 2rem 0;
@@ -973,6 +973,14 @@ form{
       }
       }
     }
+    .pricing{
+      .information{
+        width: 80%;
+      }
+      .plan{
+        width: 80%;
+      }
+    }
     #ordering{
     form{
       width: 90%;
@@ -980,11 +988,111 @@ form{
   }
   
 }
-
+@media (max-width:481px){
+  #ordering{
+    form{
+      width: 95%;
+      padding: 10px;
+    }
+  }
+}
 @media (max-width:450px){
 
   html{
     font-size: 50%;
   }
-
+  .features .box-container{
+    
+    .box{
+     width: 90%;
+      }
+    }
 }
+@media(max-width: 400px){
+  .pricing{
+    .information{
+      width: 95%;
+    }
+    .plan{
+      width: 95%;
+    }
+  }
+  .trainers{
+    .box-container{
+      .box{
+        width: 90%;
+      }
+    }
+  }
+  #ordering{
+  form{
+    width: 95%;
+    span{
+      color: red;
+      font-size: 14px;
+      text-transform: none;
+      text-align: center;
+    }
+    input{
+      margin: 5px 0px;
+    }
+      
+      button{
+        width: 100%;
+        padding: 7px;
+        margin: 10px 0px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background: #ccc;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: grab;
+      }
+      #subm{
+        width: 50%;
+        margin: 40px auto 0px auto;
+        background-color: #ccc;
+        color: #000;
+        cursor: grab;
+      }
+      #card{
+        display: flex;
+        flex-direction: column;
+        #cardtype{
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        #Cardnmb{
+          width: 85%;
+        }
+        }
+        #expdate{
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+          #monthyear{
+            display: flex;
+            align-items: center;
+            width: 100%;
+          }
+          input{
+            width: 25%;
+           
+          }
+        span{
+          color: white;
+          font-size: 15px;
+          margin-right: 10px;
+        }
+        #cvv{
+          width: 40%;
+        }
+      }
+    }
+  }
+}
+}
+       
+
