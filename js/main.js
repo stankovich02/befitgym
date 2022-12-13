@@ -38,8 +38,6 @@ for(let indeks in aboutMotives)
                             </h3>
                         </div>`
 }
-
-
 let features = document.querySelector('#features .box-container');
 features.innerHTML = "";
 let singleFeature = ['body building', 'gym for men', 'gym for women'];
@@ -66,8 +64,6 @@ $('#features img').mouseout(function(){
 });
 let planLists = document.querySelectorAll('.plan .list');
 planLists.innerHTML = "";
-console.log(planLists);
-
 let basicPlan = ['Personal training','Cardio exercise','Weight lifting','Diet plans','Overall results'];
 let premiumPlan = ['Personal training','Cardio exercise','Weight lifting','Diet plans','Overall results','Trainer support 24/7','App download included','No limit numbers of training']
 let trainerBox = document.querySelector('#trainers .box-container');
