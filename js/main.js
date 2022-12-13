@@ -120,7 +120,25 @@ for(let indeks in clientsNames){
                                             <i class="fas fa-quote-left"></i>
                                         </div>
                                     </div>`
-}   
+};
+const reviewsSwiper = new Swiper(".review-slider", {
+    spaceBetween: 20,
+    grabCursor: true,
+    loop:true,
+    autoplay: {
+        delay: 7500,
+        disableOnInteraction: false,
+    },
+    breakpoints:{
+        0:{
+            slidesPerView:1,
+        },
+        600:{
+            slidesPerView:2,
+        },
+    },
+});
+
 let blogsSlider = document.querySelector("#blogs .swiper-wrapper");
 blogsSlider.innerHTML = "";   
 let blogsImages = ['blog-1.jpg','blog-2.jpg','blog-3.jpg','blog-4.jpg','blog-5.jpg'];
@@ -155,6 +173,30 @@ $('#blogs img').mouseover(function(){
 });
 $('#blogs img').mouseout(function(){
     $(this).css({"transform":"scale(1)"})
+});
+const blogsSwiper = new Swiper(".blogs-slider", {
+    spaceBetween: 20,
+    grabCursor: true,
+    loop:true,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    breakpoints:{
+        0:{
+            slidesPerView:1,
+        },
+        600:{
+            slidesPerView:2,
+        },
+        1300:{
+            slidesPerView:3,
+        },
+    },
 });
 let footerBox = document.querySelector('.footer .box');
 footerBox.innerHTML= '<h3>quick links</h3>'; 
