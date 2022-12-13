@@ -19,7 +19,7 @@ for(let indeks in links){
 var indeksImg = 0;
 var images = ['home-bg-1.jpg','home-bg-2.jpg','home-bg-3.jpg'];
 function changeImg(){
-    document.querySelector('.slide').style.backgroundImage = `url(images/${images[indeksImg]})`;
+    document.querySelector('.slide').style.backgroundImage = `url(../images/${images[indeksImg]})`;
     indeksImg++;
     if(indeksImg >= images.length){
         indeksImg = 0;
