@@ -8,13 +8,14 @@
 
      <!-- font awesome cdn link  -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+     <!-- Link Swiper's CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     <!-- custom css file link  -->
-     <link rel="stylesheet" href="css/style.css">
+     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>    <!-- custom css file link  -->
+     <link rel="stylesheet" href="css/about.css">
 
      <link rel="icon" href="images/favicon.ico"/>
+     
 </head>
 <body>
     <header class="header">
@@ -28,9 +29,30 @@
         </nav>
     
     </header>
-    <h1 id="about-head">About me:</h1>
-    <div id="about-wrapper">
-
+    <h1 id="about-head">ABOUT ME:</h1>
+    <!-- <div id="about-wrapper">
+        <div id="my-img">
+            <img src="images/author.png" alt="author">
+        </div>
+    </div> --> 
+ <div id="container">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="images/author.png" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/author.png" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/author.png" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/author.png" />
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
     </div>
     <section class="footer">
 
@@ -76,8 +98,24 @@
         </div>
     
     </section>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          effect: "cube",
+          grabCursor: true,
+          cubeEffect: {
+            shadow: true,
+            slideShadows: true,
+            shadowOffset: 20,
+            shadowScale: 0.94,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+          },
+        });
+      </script>
     
     <div class="credit"> created by <span>Marko Stankovic 41/21</span> | all rights reserved! </div>
     
-    <script src="js/main.js"></script>
+    <script src="js/about.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 </body>

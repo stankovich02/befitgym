@@ -27,8 +27,8 @@ function changeImg(){
     setTimeout("changeImg()", 5000);
 };
 window.onload = changeImg;
-let boxCont = document.querySelector('#about-cont');
-boxCont.innerHTML="";
+let boxCont = document.querySelector('#motivate-cont');
+boxCont.innerHTML= "";
 let aboutMotives = ['body and mind', 'healthy life', 'strategies', 'workout'];
 for(let indeks in aboutMotives)
 {
@@ -534,5 +534,7 @@ function formborder(){
         document.querySelector('form').style.border = '3px solid red';
     }
 }
+let about = document.querySelector('#about-wrapper');
+console.log(about);
         
     

@@ -861,10 +861,17 @@ form{
 
 }
 #about-wrapper{
-  width: 80%;
+  display: flex;
+  border-radius: 5%;
+  width: 1000px;
   height: 500px;
   margin: 0 auto;
   background-color: #aaa;
+  img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5% 0 0 5%;
+  }
 }
 // media queries 
 @media (max-width:1501px){
