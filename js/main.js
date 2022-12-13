@@ -27,7 +27,7 @@ function changeImg(){
     setTimeout("changeImg()", 5000);
 };
 window.onload = changeImg;
-let boxCont = document.querySelector('#motivate-cont');
+let boxCont = document.querySelector('#about-cont');
 boxCont.innerHTML= "";
 let aboutMotives = ['body and mind', 'healthy life', 'strategies', 'workout'];
 for(let indeks in aboutMotives)
