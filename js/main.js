@@ -1,6 +1,6 @@
 let navMenu = document.querySelector('.navbar');
 navMenu.innerHTML="";
-let links = ['home','about','features','pricing','trainers', 'review', 'author'];
+let links = ['#home','#about','#features','#pricing','#trainers', '#review', '#author.html'];
 let sections = ['home','about','features','pricing','trainers', 'review', 'author']
 const menubtn = document.querySelector('#menu-btn');
 const navbar = document.querySelector('.header .navbar');
@@ -14,7 +14,7 @@ window.onscroll = () =>{
     navbar.classList.remove('active');
 };
 for(let indeks in links){
-    navMenu.innerHTML += `<a href="/befitgym/#${links[indeks]}">${sections[indeks]}</a>`;
+    navMenu.innerHTML += `<a href="/befitgym/${links[indeks]}">${sections[indeks]}</a>`;
 } 
 var indeksImg = 0;
 var images = ['home-bg-1.jpg','home-bg-2.jpg','home-bg-3.jpg'];
@@ -161,7 +161,7 @@ $('#blogs img').mouseout(function(){
 let footerBox = document.querySelector('.footer .box');
 footerBox.innerHTML= '<h3>quick links</h3>'; 
 for(let indeks in links){
-    footerBox.innerHTML += `<a class="links" href="#${links[indeks]}">${sections[indeks]}</a>`;
+    footerBox.innerHTML += `<a class="links" href="${links[indeks]}">${sections[indeks]}</a>`;
 } 
 var expDateDay = document.querySelector('#expdatemonth');
 var expDateYear = document.querySelector('#expdateyear');
