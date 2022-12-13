@@ -1,19 +1,3 @@
-
-
-
-
-var swiper = new Swiper(".home-slider", {
-    spaceBetween: 20,
-    effect: "fade",
-    grabCursor: true,
-    loop:true,
-    centeredSlides: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-});
-
 var swiper = new Swiper(".review-slider", {
     spaceBetween: 20,
     grabCursor: true,
@@ -31,7 +15,6 @@ var swiper = new Swiper(".review-slider", {
         },
     },
 });
-
 var swiper = new Swiper(".blogs-slider", {
     spaceBetween: 20,
     grabCursor: true,
@@ -55,4 +38,4 @@ var swiper = new Swiper(".blogs-slider", {
             slidesPerView:3,
         },
     },
-});
+});s

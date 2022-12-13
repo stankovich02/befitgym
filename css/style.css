@@ -475,9 +475,6 @@ p {
   background: #111;
   margin-bottom: 7rem;
 }
-.blogs .slide:hover .image img {
-  transform: scale(1.1);
-}
 .blogs .slide .image {
   height: 25rem;
   width: 100%;

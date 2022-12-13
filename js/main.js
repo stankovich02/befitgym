@@ -64,7 +64,19 @@ $('#features img').mouseover(function(){
 $('#features img').mouseout(function(){
     $(this).css({"transform":"scale(1)"})
 });
+let planLists = document.querySelectorAll('.plan .list');
+planLists.innerHTML = "";
+console.log(planLists);
+
+let basicPlan = ['Personal training','Cardio exercise','Weight lifting','Diet plans','Overall results'];
+let premiumPlan = ['Personal training','Cardio exercise','Weight lifting','Diet plans','Overall results','Trainer support 24/7','App download included','No limit numbers of training']
 let trainerBox = document.querySelector('#trainers .box-container');
+for(let indeks in basicPlan){
+    planLists[0].innerHTML += ` <p> <i class="fas fa-check"></i> ${basicPlan[indeks]}</p>` 
+}
+for(let indeks in premiumPlan){
+    planLists[1].innerHTML += ` <p> <i class="fas fa-check"></i> ${premiumPlan[indeks]}</p>` 
+}
 trainerBox.innerHTML = "";
 let trainerImages = ['trainer-1.jpg','trainer-2.jpg','trainer-3.jpg','trainer-4.jpg'];
 let altTrainerImages = ['Josh Chase - Expert trainer','Victoria Pollard - Expert trainer','Frank Gardner - Expert trainer','Beth Thompson  - Expert trainer'];
@@ -114,7 +126,42 @@ for(let indeks in clientsNames){
                                             <i class="fas fa-quote-left"></i>
                                         </div>
                                     </div>`
-}      
+}   
+let blogsSlider = document.querySelector("#blogs .swiper-wrapper");
+blogsSlider.innerHTML = "";   
+let blogsImages = ['blog-1.jpg','blog-2.jpg','blog-3.jpg','blog-4.jpg','blog-5.jpg'];
+let altBlogsImages = ['fitness is not about being better than someone else','how to get a six pack in 2 months','how to get a six pack in 2 months','how to get a six pack in 2 months','how to get a six pack in 2 months'];
+let blogsWrittenBy = ['by admin','by admin','by admin','by admin','by admin'];
+let blogsWrittenDate = ['21st may, 2021','2nd june, 2021','15th august, 2021','25th november, 2021','2nd december, 2021'];
+let blogsTitles = ['fitness is not about being better than someone else',
+                'How much training actually helps in improving your mindset?',
+                'Most popular question: "Best exercises for bigger biceps?"',
+                'Is it imoprtant to have your personal coach during the trainings or you can train on your own?','how to get a six pack in 2 months'];
+
+let blogsTexts = ['Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, tenetur?',
+                'The general rule is that training can improve the way of thinking, but is it really so? Well we can...',
+                'There are a lot of exercises if you want to have bigger biceps , so in this post we will describe some of the most...',
+                'Is it important to have your personal coach during the training or you can train on your own?',
+                'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, tenetur?'];
+
+for(let indeks in blogsImages){
+    blogsSlider.innerHTML += `<div class="swiper-slide slide">
+                                <div class="image">
+                                    <img src="images/${blogsImages[indeks]}" alt="${altBlogsImages[indeks]}">
+                                </div>
+                                <div class="content">
+                                    <div class="link"> <a href="#">${blogsWrittenBy[indeks]}</a> <span>|</span> <a href="#">${blogsWrittenDate[indeks]}</a> </div>
+                                    <h3>${blogsTitles[indeks]}</h3>
+                                    <p>${blogsTexts[indeks]}</p>
+                                </div>
+                            </div>`
+}
+$('#blogs img').mouseover(function(){
+    $(this).css({"transform":"scale(1.1)"})
+});
+$('#blogs img').mouseout(function(){
+    $(this).css({"transform":"scale(1)"})
+});
 let footerBox = document.querySelector('.footer .box');
 footerBox.innerHTML= '<h3>quick links</h3>'; 
 for(let indeks in links){
