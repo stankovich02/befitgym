@@ -534,7 +534,5 @@ function formborder(){
         document.querySelector('form').style.border = '3px solid red';
     }
 }
-let about = document.querySelector('#about-wrapper');
-console.log(about);
         
     
