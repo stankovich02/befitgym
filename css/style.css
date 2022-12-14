@@ -1,4 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap");
+@-webkit-keyframes updown {
+  0% {
+    top: -20px;
+  }
+  100% {
+    top: 30px;
+  }
+}
+@keyframes updown {
+  0% {
+    top: -20px;
+  }
+  100% {
+    top: 30px;
+  }
+}
+@-webkit-keyframes leftright {
+  0% {
+    left: -20px;
+  }
+  100% {
+    left: 30px;
+  }
+}
+@keyframes leftright {
+  0% {
+    left: -20px;
+  }
+  100% {
+    left: 30px;
+  }
+}
 * {
   font-family: "Nunito", sans-serif;
   margin: 0;
@@ -753,4 +785,133 @@ p {
   cursor: -webkit-grab;
   cursor: grab;
   box-shadow: 0 20 20px rgba(0, 0, 0, 0.2);
-}/*# sourceMappingURL=style.css.map */
+}
+
+#about-head {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+#about-head img {
+  margin-left: 20px;
+}
+.author-footer{
+  padding-top: 40%;
+}
+#container{
+  width: 500px;
+  height: 500px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 15%;
+  margin-bottom: 100px;
+  padding-top: 100px;
+  
+}  
+.cube {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -50%);
+  margin-top: 50px;
+}
+
+.cube-slide {
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.cube-slide:nth-child(2){
+  padding: 30px;
+  background-image: url('../images/author-bg-2.jpg');
+  text-align: center;
+}
+.cube-slide:nth-child(2) h2{
+  font-size: 22px;
+  text-align: justify;
+  font-weight: bold;
+  color: black;
+  text-transform: none;
+  line-height: 40px;
+}
+.cube-slide:nth-child(3){
+  padding: 10px;
+  background-color: #6a7e9e;
+  text-align: center;
+}
+.cube-slide:nth-child(3) h2{
+  font-size: 30px;
+  margin: 10px auto 50px auto;
+  color: white;
+}
+.cube-slide img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+}
+.cube-slide:nth-child(3) img:nth-child(2),.cube-slide:nth-child(4) img:nth-child(2){
+  width: auto;
+  height: auto;
+  margin: 0 auto 50px auto;
+  position: relative;
+  animation: updown 1.5s infinite alternate;
+}
+.cube-slide:nth-child(4){
+  background-image: url('../images/author-bg-2.jpg');
+  padding: 10px;
+}
+.cube-slide:nth-child(4) h2{
+  font-size: 30px;
+  margin: 10px auto 50px auto;
+  text-align: center;
+  color: #000;
+}
+.cube-slide:nth-child(4) img:nth-child(1){
+  width: 20%;
+  height: 20%;
+  border-radius: 10px;
+  margin: 70px auto 70px auto;
+}
+.cube-slide:nth-child(5){
+  background-color: #6a7e9e;
+  display: flex;
+  align-items: center;
+}
+.cube-slide:nth-child(5) img:nth-child(1){
+  width:auto  ;
+  height:auto;
+  position: relative;
+  border-radius: 10px;
+  margin: 70px auto 70px auto;
+  animation: leftright 1.5s infinite alternate;
+}
+.cube-slide:nth-child(5) img:nth-child(2){
+  width:auto  ;
+  height:auto;
+  border-radius: 10px;
+  margin: 70px auto 70px auto;
+}
+
+.cube .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  padding: 2px;
+  opacity: 1;
+}
+.cube .swiper-pagination-bullet-active {
+      background: #000;
+  }

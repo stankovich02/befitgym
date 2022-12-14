@@ -163,16 +163,17 @@ let blogsImages = ['blog-1.jpg','blog-2.jpg','blog-3.jpg','blog-4.jpg','blog-5.j
 let altBlogsImages = ['fitness is not about being better than someone else','how to get a six pack in 2 months','how to get a six pack in 2 months','how to get a six pack in 2 months','how to get a six pack in 2 months'];
 let blogsWrittenBy = ['by admin','by admin','by admin','by admin','by admin'];
 let blogsWrittenDate = ['21st may, 2021','2nd june, 2021','15th august, 2021','25th november, 2021','2nd december, 2021'];
-let blogsTitles = ['fitness is not about being better than someone else',
+let blogsTitles = ['Fitness is not about being better than someone else, it is about being better than you used to be.',
                 'How much training actually helps in improving your mindset?',
                 'Most popular question: "Best exercises for bigger biceps?"',
-                'Is it imoprtant to have your personal coach during the trainings or you can train on your own?','how to get a six pack in 2 months'];
+                'Is it imoprtant to have your personal coach during the trainings or you can train on your own?',
+                'Is cardio really good for you? What are the benefits of cardio?'];
 
-let blogsTexts = ['Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, tenetur?',
+let blogsTexts = ['If you’re not sure what your goals are, or don’t know where to start on your fitness journey...',
                 'The general rule is that training can improve the way of thinking, but is it really so? Well we can...',
                 'There are a lot of exercises if you want to have bigger biceps , so in this post we will describe some of the most...',
                 'Is it important to have your personal coach during the training or you can train on your own?',
-                'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam, tenetur?'];
+                'Cardio is specifically designed to provide a functional full-body workout while improving energy levels, metabolic rate, strength, and endurance.'];
 
 for(let indeks in blogsImages){
     blogsSlider.innerHTML += `<div class="swiper-slide slide">
@@ -539,13 +540,15 @@ form.addEventListener('submit', function(e) {
     validateCardHolder();
     if(validateFullName() && validateMail() && validateSelectPlans() && validateCardNumber() && validateExpMonth() && validateExpYear() && validateCvv() && validateCardHolder())
     {
-        popup.style.display = "block";
-        modbtn.onclick = function () {
-        popup.style.display = "none";
-        setTimeout("location.reload(true);", 0);
+        $(popup).show();
+        $(modbtn).on('click',function(){
+            $(popup).hide();
+            $(form).effect( "fade", 1000);
+        setTimeout("location.reload(true);", 970);
+            }); 
+        
         }
-    }
-});
+    });
 function formborder(){
     if(validateFullName() && validateMail() && validateSelectPlans() && validateCardNumber() && validateExpMonth() && validateExpYear() && validateCvv() && validateCardHolder())
     {
@@ -556,7 +559,7 @@ function formborder(){
         document.querySelector('form').style.border = '3px solid red';
     }
 }
-}   
+ }   
 if(window.location.pathname == '/befitgym/author.html')
 {
     var swiper = new Swiper(".cube", {
