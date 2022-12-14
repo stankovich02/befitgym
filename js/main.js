@@ -26,7 +26,7 @@ for(let indeks in footerLinks){
     footerBox.innerHTML += `<a class="links" href="${footerLinks[indeks]}">${footerSections[indeks]}</a>`;
 }
 
-if(window.location.pathname == '/befitgym/index.html'){
+if(window.location.pathname == '/befitgym/index.html' || window.location.pathname == '/befitgym/'){
 //home
 var indeksImg = 0;
 var images = ['home-bg-1.jpg','home-bg-2.jpg','home-bg-3.jpg'];
