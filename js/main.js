@@ -560,7 +560,7 @@ function formborder(){
 }   
 if(window.location.pathname == '/author.html')
 {
-    var swiper = new Swiper(".mySwiper", {
+    var swiper = new Swiper(".cube", {
         effect: "cube",
         grabCursor: true,
         cubeEffect: {
