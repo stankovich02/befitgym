@@ -16,7 +16,6 @@ window.onscroll = () =>{
 for(let indeks in links){
     navMenu.innerHTML += `<a href="${links[indeks]}">${sections[indeks]}</a>`;
 } 
-// /befitgym/
 var indeksImg = 0;
 var images = ['home-bg-1.jpg','home-bg-2.jpg','home-bg-3.jpg'];
 function changeImg(){
