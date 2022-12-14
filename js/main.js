@@ -26,7 +26,7 @@ for(let indeks in footerLinks){
     footerBox.innerHTML += `<a class="links" href="${footerLinks[indeks]}">${footerSections[indeks]}</a>`;
 }
 
-if(window.location.pathname == '/index.html'){
+if(window.location.pathname == '/befitgym/index.html'){
 //home
 var indeksImg = 0;
 var images = ['home-bg-1.jpg','home-bg-2.jpg','home-bg-3.jpg'];
@@ -558,7 +558,7 @@ function formborder(){
     }
 }
 }   
-if(window.location.pathname == '/author.html')
+if(window.location.pathname == '/befitgym/author.html')
 {
     var swiper = new Swiper(".cube", {
         effect: "cube",
