@@ -16,7 +16,17 @@ window.onscroll = () =>{
 };
 for(let indeks in links){
     navMenu.innerHTML += `<a href="${links[indeks]}">${sections[indeks]}</a>`;
-} 
+}
+//footer
+let footerLinks = ['index.html#home','index.html#about','index.html#features','index.html#pricing','index.html#trainers', 'index.html#review','index.html#blogs', 'documentation.pdf','sitemap.xml','rss.xml'];
+let footerSections = ['home','about','features','pricing','trainers', 'review','blogs','documentation','sitemap','rss']
+let footerBox = document.querySelector('.footer .box');
+footerBox.innerHTML= '<h3>quick links</h3>'; 
+for(let indeks in footerLinks){
+    footerBox.innerHTML += `<a class="links" href="${footerLinks[indeks]}">${footerSections[indeks]}</a>`;
+}
+
+if(window.location.pathname == '/index.html'){
 //home
 var indeksImg = 0;
 var images = ['home-bg-1.jpg','home-bg-2.jpg','home-bg-3.jpg'];
@@ -208,14 +218,7 @@ const blogsSwiper = new Swiper(".blogs-slider", {
         },
     },
 });
-//footer
-let footerLinks = ['index.html#home','index.html#about','index.html#features','index.html#pricing','index.html#trainers', 'index.html#review','index.html#blogs', 'documentation.pdf','sitemap.xml','rss.xml'];
-let footerSections = ['home','about','features','pricing','trainers', 'review','blogs','documentation','sitemap','rss']
-let footerBox = document.querySelector('.footer .box');
-footerBox.innerHTML= '<h3>quick links</h3>'; 
-for(let indeks in footerLinks){
-    footerBox.innerHTML += `<a class="links" href="${footerLinks[indeks]}">${footerSections[indeks]}</a>`;
-} 
+
 //form select
 var expDateDay = document.querySelector('#expdatemonth');
 var expDateYear = document.querySelector('#expdateyear');
@@ -339,6 +342,59 @@ function validateCardNumber(){
         return false;
     }
 }
+function validateExpMonth(){
+    if(expMonth.value.match(expMonthRegex))
+    {
+     expMonth.classList.remove('incomplete');
+     expMonth.classList.add('complete');
+     messages[5].innerHTML = "";
+     return true;
+    }
+    else if(expMonth.value.length == 0)
+    {
+     expMonth.classList.remove('complete');
+     expMonth.classList.add('incomplete');
+     messages[5].innerHTML = "Please enter your expiration date!";
+     return false;
+    }
+    else
+    { 
+     expMonth.classList.remove('complete');
+     expMonth.classList.add('incomplete');
+     messages[5].innerHTML = "Please enter your expiration month date in correct format! <br>Example: 01";
+     return false;
+ }
+ }
+ function validateExpYear(){
+     
+     if(expYear.value < shortYear && expYear.value > 0)
+    {
+     expYear.classList.remove('complete');
+     expYear.classList.add('incomplete');
+     messages[5].innerHTML = "Your card is expired!";
+     return false;
+    }
+     if(expYear.value.match(expYearRegex))
+    {
+     expYear.classList.remove('incomplete');
+     expYear.classList.add('complete');
+     messages[5].innerHTML = "";
+     return true;
+    }
+    else if(expYear.value.length == 0)
+    {
+     expYear.classList.remove('complete');
+     expYear.classList.add('incomplete');
+     messages[5].innerHTML = "Please enter your expiration date!";
+     return false;
+    }
+    else
+    { 
+     expYear.classList.remove('complete');
+     expYear.classList.add('incomplete');
+     messages[5].innerHTML = `Please enter your expiration year date in correct format! <br>Example: ${shortYear}`};
+     return false;
+ }
 function validateCvv(){
     if(cvv.value.match(cvvRegex)){
         cvv.classList.remove('incomplete');
@@ -379,59 +435,7 @@ function validateCardHolder(){
         return false;
     }
 }
-function validateExpMonth(){
-   if(expMonth.value.match(expMonthRegex))
-   {
-    expMonth.classList.remove('incomplete');
-    expMonth.classList.add('complete');
-    messages[5].innerHTML = "";
-    return true;
-   }
-   else if(expMonth.value.length == 0)
-   {
-    expMonth.classList.remove('complete');
-    expMonth.classList.add('incomplete');
-    messages[5].innerHTML = "Please enter your expiration date!";
-    return false;
-   }
-   else
-   { 
-    expMonth.classList.remove('complete');
-    expMonth.classList.add('incomplete');
-    messages[5].innerHTML = "Please enter your expiration month date in correct format! <br>Example: 01";
-    return false;
-}
-}
-function validateExpYear(){
-    
-    if(expYear.value < shortYear && expYear.value > 0)
-   {
-    expYear.classList.remove('complete');
-    expYear.classList.add('incomplete');
-    messages[5].innerHTML = "Your card is expired!";
-    return false;
-   }
-    if(expYear.value.match(expYearRegex))
-   {
-    expYear.classList.remove('incomplete');
-    expYear.classList.add('complete');
-    messages[5].innerHTML = "";
-    return true;
-   }
-   else if(expYear.value.length == 0)
-   {
-    expYear.classList.remove('complete');
-    expYear.classList.add('incomplete');
-    messages[5].innerHTML = "Please enter your expiration date!";
-    return false;
-   }
-   else
-   { 
-    expYear.classList.remove('complete');
-    expYear.classList.add('incomplete');
-    messages[5].innerHTML = `Please enter your expiration year date in correct format! <br>Example: ${shortYear}`};
-    return false;
-}
+
 //Event Listeners
 fullName.addEventListener('focus', () => {
     fullName.classList.add('incomplete');
@@ -553,5 +557,20 @@ function formborder(){
         document.querySelector('form').style.border = '3px solid red';
     }
 }
-        
-    
+}   
+if(window.location.pathname == '/author.html')
+{
+    var swiper = new Swiper(".mySwiper", {
+        effect: "cube",
+        grabCursor: true,
+        cubeEffect: {
+          shadow: true,
+          slideShadows: true,
+          shadowOffset: 20,
+          shadowScale: 0.94,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+}
