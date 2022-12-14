@@ -25,7 +25,6 @@ footerBox.innerHTML= '<h3>quick links</h3>';
 for(let indeks in footerLinks){
     footerBox.innerHTML += `<a class="links" href="${footerLinks[indeks]}">${footerSections[indeks]}</a>`;
 }
-
 if(window.location.pathname == '/befitgym/index.html' || window.location.pathname == '/befitgym/'){
 //home
 var indeksImg = 0;
