@@ -535,7 +535,7 @@ p {
 .footer .box-container .box .links:hover {
   color: #f00;
 }
-.footer .box-container .box .links:nth-child(8), .footer .box-container .box .links:nth-child(9), .footer .box-container .box .links:nth-child(10) {
+.footer .box-container .box .links:nth-child(9), .footer .box-container .box .links:nth-child(10), .footer .box-container .box .links:nth-child(11) {
   color: white;
   font-size: 1.7rem;
 }

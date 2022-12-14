@@ -1,7 +1,7 @@
 let navMenu = document.querySelector('.navbar');
 navMenu.innerHTML="";
-let links = ['#home','#about','#features','#pricing','#trainers', '#review', 'author.html'];
-let sections = ['home','about','features','pricing','trainers', 'review', 'author']
+let links = ['index.html#home','index.html#about','index.html#features','index.html#pricing','index.html#trainers', 'index.html#review', 'index.html#blogs','author.html'];
+let sections = ['home','about','features','pricing','trainers', 'review','blogs', 'author']
 const menubtn = document.querySelector('#menu-btn');
 const navbar = document.querySelector('.header .navbar');
 menubtn.addEventListener('click', () =>{
@@ -14,8 +14,9 @@ window.onscroll = () =>{
     navbar.classList.remove('active');
 };
 for(let indeks in links){
-    navMenu.innerHTML += `<a href="/befitgym/${links[indeks]}">${sections[indeks]}</a>`;
+    navMenu.innerHTML += `<a href="${links[indeks]}">${sections[indeks]}</a>`;
 } 
+// /befitgym/
 var indeksImg = 0;
 var images = ['home-bg-1.jpg','home-bg-2.jpg','home-bg-3.jpg'];
 function changeImg(){
@@ -41,7 +42,7 @@ for(let indeks in aboutMotives)
 let features = document.querySelector('#features .box-container');
 features.innerHTML = "";
 let singleFeature = ['body building', 'gym for men', 'gym for women'];
-let nameOfImages = ['f-img-1.jpg', 'f-img-2.jpg','f-img-3.jpg'];
+let nameOfImages = ['men-with-weigths.jpg', 'men-showing-abs.jpg','women-showing-biceps.jpg'];
 let altFeaturesImages = ['men-with-weigths','men-showing-abs','women-showing-biceps'];
 let altFeaturesIcons = ['biceps','men-lifting-dumbbells','women-lifting-dumbbells'];
 for(let indeks in singleFeature)
@@ -74,7 +75,7 @@ for(let indeks in premiumPlan){
     planLists[1].innerHTML += ` <p> <i class="fas fa-check"></i> ${premiumPlan[indeks]}</p>` 
 }
 trainerBox.innerHTML = "";
-let trainerImages = ['trainer-1.jpg','trainer-2.jpg','trainer-3.jpg','trainer-4.jpg'];
+let trainerImages = ['Josh Chase-Expert trainer.jpg','Victoria Pollard-Expert trainer.jpg','Frank Gardner-Expert trainer.jpg','Beth Thompson-Expert trainer.jpg'];
 let altTrainerImages = ['Josh Chase - Expert trainer','Victoria Pollard - Expert trainer','Frank Gardner - Expert trainer','Beth Thompson  - Expert trainer'];
 let trainerNames = ['Josh Chase','Victoria Pollard','Frank Gardner','Beth Thompson'];
 for(let indeks in trainerImages){
@@ -102,7 +103,7 @@ let testimonialSlider = document.querySelector("#review .swiper-wrapper");
 testimonialSlider.innerHTML="";
 let clientsNames = ['Elmer Dunn','Melisa Nash','Hayden Brandt','Barbara Hilton'];
 let clientsProffesions = ['designer','photographer','lawyer','ui/ux designer'];
-let clientsPictures = ['pic-1.png','pic-2.png','pic-3.png','pic-4.png']
+let clientsPictures = ['Elmer Dunn.png','Melisa Nash.png','Hayden Brandt.png','Barbara Hilton.png']
 let altClientsPictures = ['Elmer Dunn - designer','Melisa Nash - photographer','Hayden Brandt - lawyer','Barbara Hilton - ui/ux designer'];
 let clientsTestimonials = ["I had over 100kg, and I was afraid of that cognition. My friend told me about BEFIT and in 2 months I have lost 15kg. I am very happy now and I won't stop losing my belly at any cost!",
                         "BEFIT means something special to me. People out there, trainers, everyone are kind and helpful. For now, my body looks perfect in my opinion and I am very satisfied!",
@@ -198,8 +199,8 @@ const blogsSwiper = new Swiper(".blogs-slider", {
         },
     },
 });
-let footerLinks = ['#home','#about','#features','#pricing','#trainers', '#review', 'documentation.pdf','sitemap.xml','rss.xml'];
-let footerSections = ['home','about','features','pricing','trainers', 'review', 'documentation','sitemap','rss']
+let footerLinks = ['index.html#home','index.html#about','index.html#features','index.html#pricing','index.html#trainers', 'index.html#review','index.html#blogs', 'documentation.pdf','sitemap.xml','rss.xml'];
+let footerSections = ['home','about','features','pricing','trainers', 'review','blogs','documentation','sitemap','rss']
 let footerBox = document.querySelector('.footer .box');
 footerBox.innerHTML= '<h3>quick links</h3>'; 
 for(let indeks in footerLinks){
@@ -466,10 +467,12 @@ cardNumber.addEventListener('keydown', (e) => {
     if(e.key == 4)
     {
         document.querySelector('#cardtype img').setAttribute('src', 'images/visa.png');
+        document.querySelector('#cardtype img').setAttribute('alt', 'visacard')
     }
     if(e.key == 5)
     {
         document.querySelector('#cardtype img').setAttribute('src', 'images/master.png');
+        document.querySelector('#cardtype img').setAttribute('alt', 'mastercard')
     }
 
 });

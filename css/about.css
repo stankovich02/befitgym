@@ -7,14 +7,15 @@
       top: 30px;
     }
   }
-  @keyframes updown {
+  @keyframes leftright {
     0% {
-      top: -20px;
+      left: -20px;
     }
     100% {
-      top: 30px;
+      left: 30px;
     }
   }
+
 * {
   font-family: "Nunito", sans-serif;
   margin: 0;
@@ -119,7 +120,7 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap: 1.5rem;
-    padding-top: 400px;
+    padding-top: 40%;
   }
   .footer .box-container .box h3 {
     font-size: 2.5rem;
@@ -135,7 +136,7 @@ p {
   .footer .box-container .box .links:hover {
     color: #f00;
   }
-  .footer .box-container .box .links:nth-child(8), .footer .box-container .box .links:nth-child(9), .footer .box-container .box .links:nth-child(10) {
+  .footer .box-container .box .links:nth-child(9), .footer .box-container .box .links:nth-child(10), .footer .box-container .box .links:nth-child(11) {
     color: white;
     font-size: 1.7rem;
   }
@@ -205,7 +206,6 @@ p {
     text-align: center;
     padding: 2rem 0;
     margin-top: 100px;
-    margin-bottom: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -214,12 +214,13 @@ p {
     margin-left: 20px;
 }
 #container{
-    width: 100%;
-    height: auto;
+    width: 500px;
+    height: 500px;
     position: relative;
     margin: 0 auto;
     margin-top: 15%;
     margin-bottom: 100px;
+    padding-top: 100px;
     
   }  
 .swiper {
@@ -231,7 +232,7 @@ p {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transform: translate(-50%, -50%);
     /* margin-left: -250px; */
-    /* margin-top: -250px; */
+    margin-top: 50px;
   }
 
   .swiper-slide {
@@ -239,14 +240,28 @@ p {
     background-size: cover;
     border-radius: 10px;
   }
+
+  .swiper-slide:nth-child(2){
+    padding: 30px;
+    background-image: url('../images/author-bg-2.jpg');
+    text-align: center;
+  }
+  .swiper-slide:nth-child(2) h2{
+    font-size: 22px;
+    text-align: justify;
+    font-weight: bold;
+    color: black;
+    text-transform: none;
+    line-height: 40px;
+  }
   .swiper-slide:nth-child(3){
     padding: 10px;
-    background-color: red;
+    background-color: #6a7e9e;
     text-align: center;
   }
   .swiper-slide:nth-child(3) h2{
     font-size: 30px;
-    margin-bottom: 30px;
+    margin: 10px auto 50px auto;
     color: white;
   }
   .swiper-slide img {
@@ -254,21 +269,58 @@ p {
     width: 100%;
     border-radius: 10px;
   }
-  .swiper-slide:nth-child(3) img:nth-child(2){
+  .swiper-slide:nth-child(3) img:nth-child(2),.swiper-slide:nth-child(4) img:nth-child(2){
     width: auto;
     height: auto;
-    margin: 0 auto 70px auto;
+    margin: 0 auto 50px auto;
     position: relative;
     animation: updown 1.5s infinite alternate;
   }
+  .swiper-slide:nth-child(4){
+    background-image: url('../images/author-bg-2.jpg');
+    padding: 10px;
+  }
+  .swiper-slide:nth-child(4) h2{
+    font-size: 30px;
+    margin: 10px auto 50px auto;
+    text-align: center;
+    color: #000;
+  }
+  .swiper-slide:nth-child(4) img:nth-child(1){
+    width: 20%;
+    height: 20%;
+    border-radius: 10px;
+    margin: 70px auto 70px auto;
+  }
+  .swiper-slide:nth-child(5){
+    background-color: #6a7e9e;
+    display: flex;
+    align-items: center;
+  }
+  .swiper-slide:nth-child(5) img:nth-child(1){
+    width:auto  ;
+    height:auto;
+    position: relative;
+    border-radius: 10px;
+    margin: 70px auto 70px auto;
+    animation: leftright 1.5s infinite alternate;
+  }
+  .swiper-slide:nth-child(5) img:nth-child(2){
+    width:auto  ;
+    height:auto;
+    border-radius: 10px;
+    margin: 70px auto 70px auto;
+  }
+
   .swiper-pagination-bullet {
     width: 10px;
     height: 10px;
-    background: #000;
+    background: #fff;
+    padding: 2px;
     opacity: 1;
   }
     .swiper-pagination-bullet-active {
-        background: #fff;
+        background: #000;
     }
  
   /* color: white;
