@@ -1,3 +1,4 @@
+//nav bar
 let navMenu = document.querySelector('.navbar');
 navMenu.innerHTML="";
 let links = ['index.html#home','index.html#about','index.html#features','index.html#pricing','index.html#trainers', 'index.html#review', 'index.html#blogs','author.html'];
@@ -16,6 +17,7 @@ window.onscroll = () =>{
 for(let indeks in links){
     navMenu.innerHTML += `<a href="${links[indeks]}">${sections[indeks]}</a>`;
 } 
+//home
 var indeksImg = 0;
 var images = ['home-bg-1.jpg','home-bg-2.jpg','home-bg-3.jpg'];
 function changeImg(){
@@ -27,6 +29,7 @@ function changeImg(){
     setTimeout("changeImg()", 5000);
 };
 window.onload = changeImg;
+//about
 let boxCont = document.querySelector('#about-cont');
 boxCont.innerHTML= "";
 let aboutMotives = ['body and mind', 'healthy life', 'strategies', 'workout'];
@@ -38,6 +41,7 @@ for(let indeks in aboutMotives)
                             </h3>
                         </div>`
 }
+//features
 let features = document.querySelector('#features .box-container');
 features.innerHTML = "";
 let singleFeature = ['body building', 'gym for men', 'gym for women'];
@@ -62,17 +66,20 @@ $('#features img').mouseover(function(){
 $('#features img').mouseout(function(){
     $(this).css({"transform":"scale(1)"})
 });
+//pricing
 let planLists = document.querySelectorAll('.plan .list');
 planLists.innerHTML = "";
 let basicPlan = ['Personal training','Cardio exercise','Weight lifting','Diet plans','Overall results'];
 let premiumPlan = ['Personal training','Cardio exercise','Weight lifting','Diet plans','Overall results','Trainer support 24/7','App download included','No limit numbers of training']
-let trainerBox = document.querySelector('#trainers .box-container');
+
 for(let indeks in basicPlan){
     planLists[0].innerHTML += ` <p> <i class="fas fa-check"></i> ${basicPlan[indeks]}</p>` 
 }
 for(let indeks in premiumPlan){
     planLists[1].innerHTML += ` <p> <i class="fas fa-check"></i> ${premiumPlan[indeks]}</p>` 
 }
+//trainers
+let trainerBox = document.querySelector('#trainers .box-container');
 trainerBox.innerHTML = "";
 let trainerImages = ['Josh Chase-Expert trainer.jpg','Victoria Pollard-Expert trainer.jpg','Frank Gardner-Expert trainer.jpg','Beth Thompson-Expert trainer.jpg'];
 let altTrainerImages = ['Josh Chase - Expert trainer','Victoria Pollard - Expert trainer','Frank Gardner - Expert trainer','Beth Thompson  - Expert trainer'];
@@ -98,6 +105,7 @@ $('#trainers .content').mouseover(function(){
 $('#trainers .content').mouseout(function(){
     $(this).css({"transform":"translateY(6.5rem)"})
 });
+//testimonials
 let testimonialSlider = document.querySelector("#review .swiper-wrapper");
 testimonialSlider.innerHTML="";
 let clientsNames = ['Elmer Dunn','Melisa Nash','Hayden Brandt','Barbara Hilton'];
@@ -121,6 +129,7 @@ for(let indeks in clientsNames){
                                         </div>
                                     </div>`
 };
+//testiomonials slider
 const reviewsSwiper = new Swiper(".review-slider", {
     spaceBetween: 20,
     grabCursor: true,
@@ -138,7 +147,7 @@ const reviewsSwiper = new Swiper(".review-slider", {
         },
     },
 });
-
+//blogs
 let blogsSlider = document.querySelector("#blogs .swiper-wrapper");
 blogsSlider.innerHTML = "";   
 let blogsImages = ['blog-1.jpg','blog-2.jpg','blog-3.jpg','blog-4.jpg','blog-5.jpg'];
@@ -174,6 +183,7 @@ $('#blogs img').mouseover(function(){
 $('#blogs img').mouseout(function(){
     $(this).css({"transform":"scale(1)"})
 });
+//blogs slider
 const blogsSwiper = new Swiper(".blogs-slider", {
     spaceBetween: 20,
     grabCursor: true,
@@ -198,6 +208,7 @@ const blogsSwiper = new Swiper(".blogs-slider", {
         },
     },
 });
+//footer
 let footerLinks = ['index.html#home','index.html#about','index.html#features','index.html#pricing','index.html#trainers', 'index.html#review','index.html#blogs', 'documentation.pdf','sitemap.xml','rss.xml'];
 let footerSections = ['home','about','features','pricing','trainers', 'review','blogs','documentation','sitemap','rss']
 let footerBox = document.querySelector('.footer .box');
@@ -205,6 +216,7 @@ footerBox.innerHTML= '<h3>quick links</h3>';
 for(let indeks in footerLinks){
     footerBox.innerHTML += `<a class="links" href="${footerLinks[indeks]}">${footerSections[indeks]}</a>`;
 } 
+//form select
 var expDateDay = document.querySelector('#expdatemonth');
 var expDateYear = document.querySelector('#expdateyear');
 var datum = new Date();
@@ -223,6 +235,7 @@ for(let i=1; i<=12; i++){
 for(let i=shortYear; i<=shortYear + 10; i++){
     expDateYear.innerHTML += `<option value="${i}">${i}</option>`
 }
+//form validation
 const form = document.querySelector('#orderingForm');
 const fullName = document.querySelector('#fullname');
 const mail = document.querySelector('#email');
@@ -419,6 +432,7 @@ function validateExpYear(){
     messages[5].innerHTML = `Please enter your expiration year date in correct format! <br>Example: ${shortYear}`};
     return false;
 }
+//Event Listeners
 fullName.addEventListener('focus', () => {
     fullName.classList.add('incomplete');
     });
@@ -507,6 +521,7 @@ cardHolder.addEventListener('keydown', (e) => {
         cardHolder.classList.add('incomplete');
     }
 });
+//form submission
 var modbtn = document.querySelector('#popup-btn')
 var popup = document.querySelector("#popupbg");
 form.addEventListener('submit', function(e) {

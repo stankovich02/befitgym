@@ -9,7 +9,6 @@
   text-transform: capitalize;
   transition: all .2s linear;
 }
-
 $red:#f00;
 $black : #000;
 $white : #fff;
@@ -137,30 +136,30 @@ p{
   padding:0;
   margin-top: 5rem;
 
-  .slide{
-    min-height:70vh;
-    background-size: cover !important;
-    background-position: center !important;
-    padding:2rem 9%;
-    display: flex;
-    align-items: center;
-    transition: all 0.8s;
+.slide{
+  min-height:70vh;
+  background-size: cover !important;
+  background-position: center !important;
+  padding:2rem 9%;
+  display: flex;
+  align-items: center;
+  transition: all 0.8s;
 
-    .content{
-      width:60rem;
+  .content{
+    width:60rem;
 
-      span{
-        font-size: 2rem;
-        color:$red;
-        display: block;
-      }
-
-      h3{
-        font-size: 5rem;
-        color:$white;
-        padding:1rem 0;
-      }
+    span{
+      font-size: 2rem;
+      color:$red;
+      display: block;
     }
+
+    h3{
+      font-size: 5rem;
+      color:$white;
+      padding:1rem 0;
+    }
+  }
   }
 }
 
@@ -742,8 +741,6 @@ form{
     #card{
       display: flex;
       flex-direction: column;
-      // align-items: center;
-      // justify-content: space-between;
       #cardtype{
         width: 100%;
         display: flex;
